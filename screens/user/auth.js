@@ -21,6 +21,7 @@ const Auth = (props) => {
 					props.onAuthState.bind(this, user);
 					console.log('User account created & signed in!');
 					console.log('user', user);
+					props.navigate('success');
 				})
 				.catch(error => {
 					if (error.code === 'auth/email-already-in-use') {
@@ -50,6 +51,7 @@ const Auth = (props) => {
 					props.onAuthState.bind(this, user);
 					console.log('User signed in!');
 					console.log('user', user);
+					props.navigate('success');
 				})
 				.catch(error => {
 					if (error.code === 'auth/wrong-password') {
@@ -86,6 +88,7 @@ const Auth = (props) => {
 					props.onAuthState.bind(this, user);
 					console.log('Facebook login success...');
 					console.log('user', user);
+					props.navigate('success');
 				})
 				.catch(error => {
 					if (error.code === 'auth/account-exists-with-different-credential') {
